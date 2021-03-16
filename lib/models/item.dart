@@ -1,7 +1,7 @@
 class Item {
   String name;
   int price;
-  int stok;
+  String color;
 
-  Item({this.name, this.price, this.stok});
+  Item({this.name, this.price, this.color});
 }

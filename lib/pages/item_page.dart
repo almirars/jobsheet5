@@ -17,30 +17,35 @@ class ItemPage extends StatelessWidget {
       ),
       home: Scaffold(
           appBar: AppBar(
-            backgroundColor: Colors.blueGrey.shade900,
+            leading: new IconButton(
+                icon: new Icon(Icons.arrow_back),
+                onPressed: () {
+                  Navigator.pop(context);
+                }),
+            backgroundColor: Colors.pink[100],
             title: Text("Item Detail"),
           ),
           body: Container(
             alignment: Alignment.center,
-            color: Colors.black87,
+            color: Colors.pink[50],
             child:
                 Column(mainAxisAlignment: MainAxisAlignment.center, children: [
               Container(
                 margin: EdgeInsets.only(bottom: 10),
                 child: Text(
                   "Nama : " + tempItem.name,
-                  style: TextStyle(color: Colors.white),
+                  style: TextStyle(color: Colors.black),
                 ),
               ),
               Container(
                 margin: EdgeInsets.only(bottom: 10),
                 child: Text(
                   "Price : " + tempItem.price.toString(),
-                  style: TextStyle(color: Colors.white),
+                  style: TextStyle(color: Colors.black),
                 ),
               ),
-              Text("Stock : " + tempItem.stok.toString(),
-                  style: TextStyle(color: Colors.white))
+              Text("Color : " + tempItem.color.toString(),
+                  style: TextStyle(color: Colors.black)),
             ]),
           )),
     );
