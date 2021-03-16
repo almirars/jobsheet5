@@ -1,11 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:navigasi/models/item.dart';
+import 'item_page.dart';
 
 class HomePage extends StatelessWidget {
   final List<Item> items = [
-    Item(name: 'Sugar', price: 5000),
-    Item(name: 'Salt', price: 2000)
+    Item(name: 'Sugar', price: 5000, stok: 5),
+    Item(name: 'Salt', price: 2000, stok: 10)
   ];
 
   @override
@@ -21,7 +22,10 @@ class HomePage extends StatelessWidget {
               final item = items[index];
               return InkWell(
                 onTap: () {
-                  Navigator.pushNamed(context, '/item', arguments: item);
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => ItemPage(tempItem: item)));
                 },
                 child: Card(
                   child: Container(
